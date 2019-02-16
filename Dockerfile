@@ -5,7 +5,6 @@ WORKDIR /opt/bind9
 
 ADD https://raw.githubusercontent.com/adbegon/pub/master/AdfreeZoneSSL.crt /usr/local/share/ca-certificates/
 ADD https://github.com/Yelp/dumb-init/releases/download/v${DINIT}/dumb-init_${DINIT}_amd64.deb /tmp/dumb-init_amd64.deb
-ADD files/webmin/webmin_1.900_all.deb /tmp/webmin_1.900_all.deb
 
 # Installing dunb-init and adding Adfreezone Cert Auth
 RUN update-ca-certificates --verbose &&\
@@ -24,6 +23,7 @@ RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauth
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
+ADD files/webmin/webmin_1.900_all.deb /tmp/webmin_1.900_all.deb
 # Installing Webmin
 RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     apt-get autoclean && apt-get autoremove &&\
