@@ -40,7 +40,7 @@ RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ADD files/bash/entry.sh /opt/bin/entry.sh
+ADD files/bash/entry.sh /opt/bin/
 RUN chmod +x /opt/bin/entry
 EXPOSE 10000 53 53/udp
 
