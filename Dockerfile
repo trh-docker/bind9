@@ -17,9 +17,14 @@ RUN apt-get update && apt-get install -y bind9 bind9utils bind9-doc &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# Installing Webmin Depends
+# Installing Webmin Depends p1
 RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl \
-    libpam-runtime libio-pty-perl python apt-show-versions &&\
+    libpam-runtime libio-pty-perl python &&\
+    apt-get autoclean && apt-get autoremove &&\
+    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+# Installing Webmin Depends p2
+RUN cd /var/cache/debconf && rm *.dat &&\
+    apt-get update && apt-get install -y apt-show-versions &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
