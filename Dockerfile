@@ -41,8 +41,8 @@ RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 ADD files/bash/entry.sh /opt/bin/
-RUN chmod +x /opt/bin/entry
+RUN chmod +x /opt/bin/entry.sh
 EXPOSE 10000 53 53/udp
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-CMD ["/opt/bin/entry"]
+CMD ["/opt/bin/entry.sh"]
