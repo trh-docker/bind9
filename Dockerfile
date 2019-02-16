@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauth
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 # Installing Webmin Depends p2
 RUN cd /var/cache/debconf && rm *.dat &&\
-    apt-get update && apt-get install -y apt-show-versions &&\
+    apt-get update && apt-get install -y apt-show-versions --configure &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
