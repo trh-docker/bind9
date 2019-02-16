@@ -9,6 +9,7 @@ ADD https://github.com/Yelp/dumb-init/releases/download/v${DINIT}/dumb-init_${DI
 # Installing dunb-init and adding Adfreezone Cert Auth
 RUN update-ca-certificates --verbose &&\
     dpkg -i /tmp/dumb-init_amd64.deb && \
+    mkdir /opt/bin &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
@@ -38,3 +39,10 @@ ADD files/webmin/webmin_1.900_all.deb /tmp/webmin_1.900_all.deb
 RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+
+ADD files/bash/entry.sh /opt/bin/entry.sh
+RUN chmod +x /opt/bin/entry
+EXPOSE 10000 53 53/udp
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["/opt/bin/entry"]
