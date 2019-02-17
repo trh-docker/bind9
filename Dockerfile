@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y bind9 bind9utils bind9-doc &&\
 
 # Installing Webmin Depends p1
 RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl \
-    libpam-runtime libio-pty-perl python apt-utils &&\
+    libpam-runtime libio-pty-perl python apt-utils curl git &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 # Installing Webmin Depends p2
