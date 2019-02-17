@@ -1,6 +1,6 @@
 #!/usr/bin/dumb-init /bin/sh
 
-pas.sh &
+/opt/bin/pas.sh &
 /etc/webmin/start &
 named -f -u bind 
 
