@@ -41,6 +41,7 @@ RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 ADD files/bash/entry.sh /opt/bin/
+ADD files/webmin/miniserv.conf /etc/webmin/miniserv.conf
 RUN chmod +x /opt/bin/entry.sh
 EXPOSE 10000 53 53/udp
 
