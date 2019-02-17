@@ -1,3 +1,3 @@
 #/bin/bash
-
-echo -e ${PASSWORD}"\n"${PASSWORD} | passwd root
+pas=$1
+echo -e "$pas\n$pas" | passwd root
