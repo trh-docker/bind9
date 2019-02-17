@@ -1,6 +1,6 @@
 #!/usr/bin/dumb-init /bin/sh
 
-/opt/bin/pas.sh ${PASSWORD}&
+echo "root:${PASSWORD}" | chpasswd 
 /etc/webmin/start &
 named -f -u bind 
 
@@ -20,3 +20,6 @@ named -f -u bind
 
 # [Install]
 # WantedBy=multi-user.target
+
+# pas=$1
+# echo -e "$pas\n$pas" | passwd -q root
