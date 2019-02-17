@@ -1,8 +1,8 @@
 #!/usr/bin/dumb-init /bin/sh
 
 echo "root:${PASSWORD}" | chpasswd 
-/etc/webmin/start &
-named -f -u bind 
+named -f -u bind &
+/etc/webmin/start
 
 
 
