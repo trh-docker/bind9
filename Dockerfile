@@ -39,11 +39,11 @@ ADD files/webmin/webmin_1.900_all.deb /tmp/webmin_1.900_all.deb
 RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
+RUN mkdir /opt/bind9/tmp
 ADD files/bash/entry.sh /opt/bin/
 ADD files/webmin/miniserv.conf /etc/webmin/miniserv.conf
 RUN chmod +x /opt/bin/entry.sh
-EXPOSE 10000 53 53/udp
+EXPOSE 53 53/udp
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/opt/bin/entry.sh"]
