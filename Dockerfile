@@ -14,7 +14,7 @@ RUN update-ca-certificates --verbose &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Installing Bind9
-RUN apt-get update && apt-get install -y bind9 bind9utils bind9-doc &&\
+RUN apt-get update && apt-get install -y bind9 bind9utils bind9-doc cron &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
