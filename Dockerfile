@@ -34,9 +34,9 @@ RUN apt-get update &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ADD files/webmin/webmin_1.900_all.deb /tmp/webmin_1.900_all.deb
+ADD files/webmin/webmin_1.920_all.deb /tmp/webmin_1.920_all.deb
 # Installing Webmin
-RUN dpkg -i /tmp/webmin_1.900_all.deb &&\
+RUN dpkg -i /tmp/webmin_1.920_all.deb &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 RUN mkdir /opt/bind9/tmp
