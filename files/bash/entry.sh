@@ -12,6 +12,7 @@ then
     cp /opt/bind9/tmp/miniserv.conf /etc/webmin/miniserv.conf
 fi
 /etc/webmin/start &
+cron &
 named -f -u bind 
 
 
