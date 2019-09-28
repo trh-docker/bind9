@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y bind9 bind9utils bind9-doc cron &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Installing Webmin Depends p1
-RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl \
+RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl shared-mime-info \
     libpam-runtime libio-pty-perl python apt-utils curl git &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
