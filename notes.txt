@@ -1,2 +1,3 @@
 #Notes on builds
 update os
+added 1.41
