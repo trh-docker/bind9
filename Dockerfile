@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y perl libnet-ssleay-perl openssl libauth
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 # Installing Webmin Depends p2
-RUN apt-get update &&\
+RUN apt-get update && apt upgrade -y &&\
     cd /var/cache/debconf && rm *.dat &&\
     rm /etc/apt/apt.conf.d/docker-gzip-indexes &&\
     apt-get purge apt-show-versions &&\
@@ -34,7 +34,7 @@ RUN apt-get update &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ADD files/webmin/webmin_1.930_all.deb /tmp/webmin-current.deb
+ADD files/webmin/webmin_1.941_all.deb /tmp/webmin-current.deb
 #ADD https://www.webmin.com/download/deb/webmin-current.deb /tmp/webmin-current.deb
 # Installing Webmin
 RUN dpkg -i /tmp/webmin-current.deb &&\
