@@ -34,7 +34,7 @@ RUN apt-get update && apt upgrade -y &&\
     apt-get autoclean && apt-get autoremove &&\
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ADD files/webmin/webmin_1.953_all.deb /tmp/webmin-current.deb
+ADD files/webmin/webmin_1.955_all.deb /tmp/webmin-current.deb
 #ADD https://www.webmin.com/download/deb/webmin-current.deb /tmp/webmin-current.deb
 # Installing Webmin
 RUN dpkg -i /tmp/webmin-current.deb &&\
