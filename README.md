@@ -8,3 +8,4 @@ docker run -it -p 80:80 -p 53:53 -p 53:53/udp -e PASSWORD=YourRootPassword quay.
 docker run -d -p 80:80 -p 53:53 -p 53:53/udp -e PASSWORD=YourRootPassword quay.io/spivegin/bind9
 '''
 updated webmin to 1.953
+updatee webmin to 1.955
